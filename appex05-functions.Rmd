@@ -133,7 +133,7 @@ in object `congress` from 1993 to 2019. You'll need to put your function
 call inside print and figure out the loop sequence. Once you are done,
 remove chunk option `eval=FALSE`.
 
-```{r GIF, eval=FALSE, animation.hook="gifski", interval=.75, fig.width=12, fig.height=7, fig.cap="Dem: blue, GOP: red, Other: purple, Vacant: grey"}
+```{r GIF, eval=FALSE, animation.hook="gifski", interval=.75, fig.cap="Dem: blue, GOP: red, Other: purple, Vacant: grey"}
 for () {
   print({
     
