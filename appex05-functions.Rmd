@@ -1,6 +1,6 @@
 ---
 title: "Functions and Automation"
-author: ""
+author: "Katelyn Chang"
 date: ""
 output: 
   html_document:
@@ -50,11 +50,11 @@ c(mean(nums), median(nums))
 ```
 
 ```{r task1_fcn}
-center_measures <- function() {
-  
-  
-  
+center_measures <- function(x) {
+  mm <- c(mean(x, na.rm = TRUE), median(x, na.rm = TRUE))
+  return (mm)
 }
+center_measures(nums)
 ```
 
 
@@ -69,7 +69,9 @@ x / sum(x)
 
 ```{r task2_fcn}
 
-
+fraction <- function(x) {
+  x/sum(x)
+}
 
 ```
 
@@ -96,8 +98,17 @@ length(seq(from = 2, to = 10, by = 2))
 
 ```{r task3_loop}
 
+result <- numeric(length(congress))
 
+for (j in seq_along(congress)) {
+  result[j] <- congress %>%
+    select(j) %>%
+    distinct() %>%
+    pull() %>%
+    length()
+}
 
+result
 ```
 
 ## Task 4
@@ -134,9 +145,9 @@ call inside print and figure out the loop sequence. Once you are done,
 remove chunk option `eval=FALSE`.
 
 ```{r GIF, eval=FALSE, animation.hook="gifski", interval=.75, fig.cap="Dem: blue, GOP: red, Other: purple, Vacant: grey"}
-for () {
+for (i in seq(1993, 2019, 2)) {
   print({
-    
+    plot_congress(year = i, leg_branch = "house")
   })
 }
 ```
